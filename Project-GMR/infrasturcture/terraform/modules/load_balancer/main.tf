@@ -1,5 +1,5 @@
 resource "aws_lb" "my_lb" {
-  name               = "r-studio"
+  name               = "gmr-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = var.security_group_id
