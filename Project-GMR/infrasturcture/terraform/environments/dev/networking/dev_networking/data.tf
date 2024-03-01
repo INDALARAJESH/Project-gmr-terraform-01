@@ -4,6 +4,6 @@ owners      = ["amazon"]
 
 filter {
 name   = "name"
-values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
  }
 }
