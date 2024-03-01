@@ -7,7 +7,7 @@ sudo yum install git -y
 sudo yum update -y
 
 # Install Nginx
-sudo yum install nginx -y
+sudo amazon-linux-extras install nginx1 -y
 
 # Start Nginx and enable it to start on boot
 sudo systemctl start nginx
