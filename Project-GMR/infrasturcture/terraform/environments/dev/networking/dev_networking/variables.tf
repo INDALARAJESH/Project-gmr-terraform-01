@@ -28,7 +28,7 @@ variable "public_subnets" {
 variable "availability_zones" {
   description = "A list of availability zones in the region"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["ap-south-1a", "ap-south-1b"]
 }
 
 
@@ -53,7 +53,7 @@ variable "domain_name" {
 }
 
 variable "subdomain_name" {
-  default = "j"
+  default = "Raj"
 }
 
 
