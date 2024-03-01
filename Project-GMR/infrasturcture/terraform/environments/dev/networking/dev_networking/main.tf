@@ -1,20 +1,3 @@
-provider "aws" {
-  region  = "ap-south-1"
-  profile = "default"
-}
-
-# terraform {
-#   backend "s3" {
-#     profile = "default"
-#     bucket  = "terraform-state-file-dev-123"
-#     key     = "dev/terraform.tfstate"
-#     region  = "us-east-1"
-#     encrypt = true
-#   }
-# }
-
-
-
 module "vpc" {
   source             = "../../../../modules/vpc"
   vpc_cidr           = var.vpc_cidr
