@@ -3,10 +3,10 @@ resource "tls_private_key" "ec2_ssh" {
   rsa_bits  = 4096
 }
 
-#resource "local_file" "tf-key" {
-#  content  = tls_private_key.ec2_ssh.private_key_pem
-#  filename = "${var.key_name}.pem"
-#}
+resource "local_file" "tf-key" {
+  content  = tls_private_key.ec2_ssh.private_key_pem
+  filename = "${var.key_name}.pem"
+}
 
 resource "aws_key_pair" "deployer" {
   key_name   = var.key_name
@@ -15,11 +15,11 @@ resource "aws_key_pair" "deployer" {
   var.tags)
 }
 
-resource "aws_secretsmanager_secret" "key_pair_secret" {
-  name = var.secret_name
-}
+#resource "aws_secretsmanager_secret" "key_pair_secret" {
+# name = var.secret_name
+#}
 
-resource "aws_secretsmanager_secret_version" "key_pair_secret_version" {
-  secret_id     = aws_secretsmanager_secret.key_pair_secret.id
-  secret_string = tls_private_key.ec2_ssh.private_key_pem
-}
+#resource "aws_secretsmanager_secret_version" "key_pair_secret_version" {
+# secret_id     = aws_secretsmanager_secret.key_pair_secret.id
+#  secret_string = tls_private_key.ec2_ssh.private_key_pem
+#}
